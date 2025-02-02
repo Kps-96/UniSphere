@@ -7,15 +7,22 @@
 body{
     background-color: blue;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    transition: margin-left 0.3s ease;
 }
 
 .container{
-    width: 98%;
-    height: 97vh;
+    height: 100%;
     background-color: white;
-    margin: 9px 14px 9px;
     border-radius: 20px;
     padding: 10px;
+}
+
+.main-cont{
+    width: 98%;
+    height: 97vh;
+    margin: 9px 14px 9px;
 }
 
 .profile-cont{
@@ -26,6 +33,10 @@ body{
 .profile-img{
     float: right;
 }
+
+/* .sidebar-img{
+
+} */
 
 .header{
     margin-bottom: 15px;
@@ -45,12 +56,14 @@ body{
 }
 
 .card-cont{
-    width: 100%;
+    width: 80%;
     height: 300px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card{
@@ -107,4 +120,40 @@ body{
     border: none;
     outline: none;
     border-radius: 5px;
+}
+
+.sidebar{
+    width: 200px;
+    height: 97%;
+    position: absolute;
+    top: 0px;
+    left: 14px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 0;
+    margin-top: 10px;
+}
+
+.sidebar {
+    width: 270px;
+    height: 97%;
+    background: #333;
+    color: white;
+    left: -270px;
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.content {
+    width: 80%;
+    float: right;
+    transition: margin-left 0.3s ease; */
+}
+
+.sidebar.active + .content {
+    margin-left: 250px;
 }
