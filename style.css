@@ -1,127 +1,92 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: blue;
+body {
+    background-color: white;
     overflow: hidden;
     position: relative;
     display: flex;
     transition: margin-left 0.3s ease;
 }
 
-.container{
+.container {
     height: 100%;
-    background-color: white;
+    background-image: url("/src/university1.jpg");
+    background-position: center;
+    background-size: cover;
     border-radius: 20px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.main-cont{
+.main-cont {
     width: 98%;
     height: 97vh;
-    margin: 9px 14px 9px;
+    margin: 9px 14px;
 }
 
-.profile-cont{
-    width: 100%;
-    min-height: 50px;
-}
-
-.profile-img{
-    float: right;
-}
-
-.header{
+.header {
     margin-bottom: 15px;
 }
 
-.head-title{
+.head-title {
     text-align: center;
 }
 
-.head-title img{
-    width:60px;
-    height:60px;
+.head-title img {
+    width: 60px;
+    height: 60px;
 }
 
-.head-title h1{
-    font-size: 36px;
+.head-title h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
 }
 
-.card-cont{
+.head-title p {
+    font-size: 20px;
+}
+
+.search-bar {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
     width: 80%;
-    height: 300px;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 17px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cardfull{
-    width: 100%;
-}
-
-.card{
-    max-width: 300px;
-    height: 97%;
+    padding: 15px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    box-shadow: 3px 3px 15px rgb(72, 72, 72),
-    -1px -1px 100px white;
+    z-index: 10;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.card-val{
-    margin: 0px 10px;
-    padding: 7px;
-    border-radius: 10px;
-    background-color: rgb(216, 216, 216);
-}
-
-.card-val:hover{
-    background-color: rgb(140, 140, 140);
-    transition: linear 0.3s;
-    color: #fff;
-    border: 2px solid #333;
-    padding: 8px;
-}
-
-.search-bar{
-    border-radius: 10px;
-    height: 55px;
-}
-
-.send-img{
-    width: 30px;
-    height: 30px;
-}
-
-.search-bar{
-    display: flex;
-}
-
-.input-cont{
+.input-cont {
     flex: 1;
     border-radius: 10px;
-}
-
-.input-cont input{
-    width: 99%;
+    width: 100%;
     height: 100%;
-    font-size: 20px;
-    padding-left: 15px;
-    border-radius: 10px;
-    border: 2px solid;
+    margin-right: 5px;
 }
 
-.send-btn{
+.input-cont input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.send-btn {
     width: 52px;
     height: 52px;
     background-color: rgb(94, 94, 247);
@@ -130,7 +95,7 @@ body{
     border-radius: 5px;
 }
 
-.send-btn:hover{
+.send-btn:hover {
     width: 65px;
     height: 55px;
     background-color: rgb(55, 55, 254);
@@ -138,168 +103,50 @@ body{
     border-radius: 10px;
 }
 
-.sidebar{
-    width: 200px;
-    height: 97%;
+
+#results {
     position: absolute;
-    top: 0px;
-    left: 14px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    z-index: 0;
-    margin-top: 10px;
-}
-
-.sidebar {
-    width: 270px;
-    height: 97%;
-    background: #333;
-    color: white;
-    left: -270px;
-    transition: left 0.5s ease;
-    padding: 10px;
-    padding-top: 20px;
-}
-
-.sidebar.active {
-    left: 0;
-}
-
-.content {
-    width: 80%;
-    float: right;
-    transition: margin-left 0.5s ease; 
-}
-
-.sidebar.active + .content {
-    margin-left: 250px;
-}
-
-.sidebar-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 8px;
-}
-
-.sidebar-img{
-    width: 45px;
-    height: 45px;
-}
-
-.sidebar-title{
-    text-align: justify;
-}
-
-.sidebar-title h1{
-    font-size: 24px;
-    margin-bottom: 2px;
-}
-
-.sidebar-title p{
-    font-size: 16px;
-}
-
-hr{
-    opacity: 50%;
-}
-
-.new-chat{
-    border: 1px solid #fff;
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+    top: 147px; /* Keep it below the header */
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    padding: 15px;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
 }
 
-.new-chat:hover{
+/* Style for each university result card */
+.university-card {
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 5px solid #ff4d4d;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.university-card h3 {
+    margin: 0;
     color: #333;
-    background-color: #d9d9d9;
-    transition: linear 0.3s;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.new-chat-img{
-    width: 30px;
-    height: 30px;
-    margin: 0px 15px;
-}
-
-.new-chat-text{
-    font-size: 22px;
-    letter-spacing: 2px;
-}
-
-.history{
-    width: 100%;
-    min-height: 250px;
-    margin-top: 10px;
-}
-
-.history-text-cont{
-    display: flex;
-    margin: 10px 0px;
-}
-
-.history-msg{
-    width: 20px;
-    height: 20px;
-    margin-right: 15px;
-}
-
-.icons{
-    width: 20px;
-    height: 20px;
-    margin-right: 25px;
-    float: left;
-}
-
-.other-utils div h2{
     font-size: 20px;
 }
 
-.other-utils div{
-    display: flex;
-    min-width: 150px;
-    height: 50px;
-    justify-content:start;
-    align-items: center;
+.university-card p {
+    margin: 5px 0;
+    font-size: 16px;
 }
 
-.other-utils{
-    display: flex;
-    width: 100%;
-    height: 150px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:start;
+.university-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#results{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 300px;
-    overflow-y:scroll;
-    margin-bottom: 20px;
-    overflow: hidden;
-    line-height: 1.5;
-}
-
-#results h3{
-    font-size: 28px;
-}
-
-#result p{
-    font-size: 24px;
-    padding-bottom: 30px;
-}
-
-.hide{
-    display: none;
+.university-card:hover {
+    background: #ffecec;
+    transform: scale(1.04);
 }
