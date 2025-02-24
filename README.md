@@ -1,2 +1,2 @@
-# Research-engine-Normal-basic
-In this project just making in HTML, CSS. JS only
+# UniSphere
+A one-stop platform for foreign university research
